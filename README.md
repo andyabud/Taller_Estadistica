@@ -10,41 +10,25 @@ Reservaciones de hotel
 El archivo Hotel Bookings contiene reservas en dos hoteles (un hotel resort y otro hotel en la ciudad). Las variables son las siguientes:
 
 Nombre variable 	Descripción
-
 hotel 	Indica tipo de hotel
-
 is_canceled 	Indica con 1 si la reserva fue cancelada o 0 si no
-
 lead_time 	Indica la cantidad de días de anticipación de la reserva, es decir, días desde que reservó hasta la fecha de llegada al hotel
-
 arrival_date_year 	Año de la reserva
-
 arrival_date_month 	Mes de la reserva
-
 arrival_date_day_of_month 	Día del mes de la reserva
-
 stays_in_weekend_nights 	Cantidad de días de la reserva que son días de fin de semana (Sábado o Domingo)
-
 stays_in_week_nights 	Cantidad de días de la reserva que son días de semana (Lunes a Viernes)
-
 adults 	Cantidad de adultos a hospedarse en la reserva
-
 children 	Cantidad de niños a hospedarse en la reserva
 
 Paquetes necesarios
 
 library(readxl)
-
 library(dplyr)
-
 library(ggplot2)
-
 #install.packages("remotes")
-
 #remotes::install_github("DFJL/SamplingUtil")
-
 library(SamplingUtil)
-
 
 Análisis descriptivo
 a) Realice una revisión de la base de datos cargada, formato de columnas, cantidad de datos faltantes por columna, histograma de cada variable y 
