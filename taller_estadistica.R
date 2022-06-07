@@ -9,7 +9,7 @@ library(SamplingUtil)
 library(dplyr)
 library(readxl)
 
-#Ordenar nombres con janitor
+# Limpiar nombres con janitor, sacar tildes, mayúsculas y caracteres de conflicto
 
 janitor::clean_names(data)
 
