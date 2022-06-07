@@ -6,24 +6,21 @@ library(janitor)
 library(BSDA)
 library(ggplot2)
 library(SamplingUtil)
+library(dplyr)
+library(readxl)
 
 #Ordenar nombres con janitor
 
 janitor::clean_names(data)
 
-
 # Cargar BBDD ------------------------------------------------------------------
 
-library(readxl)
-
 data <- readxl::read_xlsx("data/hotel_bookings.xlsx")
-## Como cambiar los "meses texto" a "meses número"
-## cargados los datos en Base
-library(dplyr)
 
-#Crear una nueva columna a partir de "arrival_date_month" con los números del mes
+## Como cambiar los "meses texto" a "meses números cargados los datos en Base
+# Crear una nueva columna a partir de "arrival_date_month" con los números del mes
 # a través de la función de recode (ésta no elimina la columna a diferencia) de
-# hacerlo con mutate
+# hacerlo con mutate de dplyr
 
 data$mes = recode(data$arrival_date_month, 
                   "January" = 1, "February" = 2, "March" = 3, 
@@ -35,6 +32,7 @@ data$mes = recode(data$arrival_date_month,
 data$Fecha = 100*data$arrival_date_year+data$mes
 
 # Análisis Descriptivo ----------------------------------------------------
+
 ## A -----------------------------------------------------------------------
 # Realice una revisión de la base de datos cargada, formato de columnas, cantidad de datos
 # faltantes por columna, histograma de cada variable y estadísticas descriptivas como
